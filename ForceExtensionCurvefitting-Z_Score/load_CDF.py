@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
 
-cdf_path = r'C:\Users\brouw\Desktop\CDF'
+cdf_path = r'C:\Users\tbrouwer\Desktop\CDF'
 
 cdf_files = []
 os.chdir(cdf_path)
@@ -18,6 +18,7 @@ ax = fig.add_subplot(1, 1, 1)
 colors = iter(cm.rainbow(np.linspace(0, 1, len(cdf_files))))
 
 for file in cdf_files:
+    print("Processing file: " + file)
     df = pd.read_csv(cdf_path+"\\"+file, sep='\t')
     fraction = df['Fraction']
     rupture_force = df['F (pN)']
